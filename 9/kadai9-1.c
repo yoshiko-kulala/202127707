@@ -139,8 +139,9 @@ void DeleteNodeNth(Node **top, int n){
 	else{//一個前の後続アドレスを自分の後続アドレスに変更する
 		Node *del = *top;
 		for(int i=1;i<n;i++)del = del->next;
+    Node *ptr = del->next;
 		del->next=del->next->next;
-		free(del);
+		free(ptr);
 	}
 }
 
