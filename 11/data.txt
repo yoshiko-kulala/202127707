@@ -1,0 +1,3 @@
+Hiraki	09012345678	tanaka@somedomain.org
+Masaki	08098765432	masaki@somedomain.net
+Miura	07012345678	miura@somedomain.com
