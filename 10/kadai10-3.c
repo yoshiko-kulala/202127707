@@ -115,8 +115,14 @@ List append(List L1, List L2){
 /* リストの内容を反転したリストを返却する関数 */
 List reverse(List L){
 	/* 課題10-3のソースコードを作成 */
+	if(L == nil){
+		return L;
+	}
+	else{
+		return append(reverse(rest(L)),cons(first(L),nil));
+	}
 /* ここにソースコードを書く */
-    int num = length(L);
+    /*int num = length(L);
     Data d;
     List rev;
     rev = nil;
@@ -125,7 +131,7 @@ List reverse(List L){
         rev = cons(d, rev);
         L=rest(L);
     }
-    return (rev);
+    return (rev);*/
 }
 
 /* メイン関数 */
