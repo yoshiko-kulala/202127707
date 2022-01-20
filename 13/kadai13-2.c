@@ -8,6 +8,7 @@ void quick(int *, int, int);
 int pivot(int a[], int left, int right);
 void swap(int *x, int *y);
 int partition(int a[], int left, int right, int p);
+int partition2(int a[], int left, int right, int p);
 
 void printarray(char *s, int *a, int n);
 void debug(int a[], int left, int right, int p, int center);
@@ -57,6 +58,12 @@ int partition(int a[], int left, int right, int p)
   return j;
 }
 
+int partition2(int a[], int left, int right, int p)
+{
+  if(p!=left)swap(&a[p],&a[left]);
+  return partition(a,left,right,left);
+}
+
 // 配列aのleftからrightまでをクィックソートする関数(課題1)
 void quick(int a[], int left, int right)
 {
@@ -75,11 +82,11 @@ void quick2(int a[], int left, int right)
 {
   if(right>left){
     int p = pivot2(a, left, right);
-    int center = partition(a, left, right, p);
+    int center = partition2(a, left, right, p);
   if(center-left>1)
-    quick(a, left, center - 1);
+    quick2(a, left, center - 1);
   if(right-center>1)
-    quick(a, center + 1, right);
+    quick2(a, center + 1, right);
     }
 }
 
