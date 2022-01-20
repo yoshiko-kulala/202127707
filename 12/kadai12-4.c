@@ -95,7 +95,7 @@ int HashGet(Hash *hash, char *key, char *value)
 {
   // コードを作成 （課題4）※課題2を修正
   int code = HashCode(hash, key);
-  if (hash->table[code].state == EMPTY)return FALSE;
+  //if (hash->table[code].state == EMPTY)return FALSE;
   while (strcmp(hash->table[code].key, key) != 0) {
     code = (code + 1) % hash->size;
     if (code == HashCode(hash, key))return FALSE;
@@ -113,7 +113,7 @@ int HashDelete(Hash *hash, char *key)
     code = (code + 1) % hash->size;
     if (code == HashCode(hash, key))return FALSE;
   }
-  hash->table[code].state = EMPTY;
+  hash->table[code].state = DELETED;
   return TRUE;
 }
 
