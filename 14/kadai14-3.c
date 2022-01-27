@@ -70,8 +70,7 @@ void set_queen(int q[], int m, int n)
   }
   for( i = 0; i < n; i++){
     q[m] = i;
-    if(q[m]==q[m-1])set_queen(q, n, n);
-    else set_queen(q, m + 1, n);
+    if(q[m]!=q[m-1])set_queen(q, m + 1, n);
   }
 }
 

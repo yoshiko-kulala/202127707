@@ -15,10 +15,10 @@ void set_queen(int q[], int m, int n)
 {
   // 引数 q:盤面の配列，m: 第m列目の盤面を作成（再帰処理で利用), n:盤面qの要素数
   // ここに処理を書く（課題1)
-  print_queen(q,n);
   int i;
   if( m == n){
     // ある盤面に関する判定処理を書く
+  	print_queen(q,n);
     return;
   }
   for( i = 0; i < n; i++){
