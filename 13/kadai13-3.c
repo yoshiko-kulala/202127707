@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 #define N 10000      // ”z—ñ‚Ì’·‚³
 #define ITERATE 1000 // ŒJ‚è•Ô‚µ‰ñ”
@@ -197,6 +198,7 @@ int main(void)
   {
     printf("-- OK --\n");
   }
-  printf("\nquick:%lf\nquick2:%lf",sec1,sec2);
+  printf("\nquick:%lf\nquick2:%lf\n",sec1,sec2);
+  printf("·•ª:%lf\n",fabs(sec1-sec2));
   return 0;
 }
